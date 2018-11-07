@@ -1,0 +1,51 @@
+﻿
+@model REV_TEST_2.Models.Rev
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (ViewData["ok"] != null)
+{
+    <p>@ViewData["ok"]</p>
+}
+
+@using (Html.BeginForm("Index", "Main", FormMethod.Post))
+{
+
+    @Html.LabelFor(model=>model.name) @Html.EditorFor(model=>model.name) 
+    @Html.ValidationMessageFor(model=>model.name)
+    <br />
+
+    @Html.Label("","OK so are a real or false")<br />
+    @Html.Label("", "Im a  real BBOOIIII") @Html.RadioButtonFor(model=>model.isItTrue, true) 
+    @Html.Label("", "NAH, Ima pussy bitch") @Html.RadioButtonFor(model=>model.isItTrue, false)
+    @Html.ValidationMessageFor(model=>model.isItTrue)
+    
+    <br />
+
+    @Html.Label("", "Now, plz enter CC, we won't steal promise")
+    @Html.EditorFor(model=>model.credit)
+    @Html.ValidationMessageFor(model=>model.credit)
+    <br />
+
+
+    @Html.Label("", "Now enter DOB,don't know wut that is the FKING GOOGLE IT U DUMBFK")
+    @Html.EditorFor(model=>model.dob)<br />
+    @Html.ValidationMessageFor(model=>model.dob)
+    <br /><br />
+
+    @Html.Label("", "OK so that not required, leave it blank plz")
+    <br />
+    @Html.ValidationMessageFor(model=>model.comment)
+    <br />
+    @Html.TextAreaFor(model=>model.comment)
+
+
+    <br />
+    <input type="submit" value="SUBMIT, HOPE U FILLED IT WELL< ELSE U GONNA LOSE THEET" />
+}
+
+@Html.ActionLink("go to page 222222", "p2", "Main")
